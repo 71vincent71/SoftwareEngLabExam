@@ -17,6 +17,7 @@ public class Employee
         setName(Name);
         setPPS(PPS);
         setPhone(Phone);
+        setEmploymentType(EmploymentType);
     }
     private void setTitle(String Title)
     {
@@ -82,6 +83,22 @@ public class Employee
     public Integer getPhone()
     {
         return Phone;
+    }
+
+    private void setEmploymentType(String EmploymentType)
+    {
+        if(EmploymentType == "Full-time" || EmploymentType == "Part-time" || EmploymentType == "Contract")
+        {
+            this.EmploymentType = EmploymentType;
+        }
+        else
+        {
+            throw new IllegalArgumentException("Invalid Employment Type");
+        }
+    }
+    public String getEmploymentType()
+    {
+        return EmploymentType;
     }
 
 }
