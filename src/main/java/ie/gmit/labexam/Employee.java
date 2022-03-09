@@ -7,15 +7,16 @@ public class Employee
     private String Title;
     private String Name;
     private String PPS;
-    private String Phone;
+    private Integer Phone;
     private String EmploymentType;
     private Integer Age;
 
-    public Employee(String Title, String Name, String PPS, String Phone, String EmploymentType, Integer Age)
+    public Employee(String Title, String Name, String PPS, Integer Phone, String EmploymentType, Integer Age)
     {
         setTitle(Title);
         setName(Name);
         setPPS(PPS);
+        setPhone(Phone);
     }
     private void setTitle(String Title)
     {
@@ -63,6 +64,24 @@ public class Employee
     public String getPPS()
     {
         return PPS;
+    }
+
+    private void setPhone(Integer Phone)
+    {
+        int PhoneLength = String.valueOf(Phone).length();
+
+        if(PhoneLength == 9)
+        {
+            this.Phone = Phone;
+        }
+        else
+        {
+            throw new IllegalArgumentException("Invalid Phone");
+        }
+    }
+    public Integer getPhone()
+    {
+        return Phone;
     }
 
 }
