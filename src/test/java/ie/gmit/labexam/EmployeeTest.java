@@ -67,4 +67,19 @@ public class EmployeeTest
         Exception exceptionThrown = assertThrows(IllegalArgumentException.class, ()-> new Employee("Mr", "Vincent", "01234567", 0, "Full-time", 20));
         assertEquals(invalid,exceptionThrown.getMessage());
     }
+
+    @Test
+    void testConstructorEmploymentType()
+    {
+        myEmp = new Employee("Mr", "Vincent", "01234567", 876543210, "Full-time", 20);
+        assertEquals("Full-time", myEmp.getEmploymentType());
+    }
+
+    @Test
+    void testConstructorInvalidEmploymentType()
+    {
+        final String invalid = "Invalid Employment Type";
+        Exception exceptionThrown = assertThrows(IllegalArgumentException.class, ()-> new Employee("Mr", "Vincent", "01234567", 876543210, "Time", 20));
+        assertEquals(invalid,exceptionThrown.getMessage());
+    }
 }
