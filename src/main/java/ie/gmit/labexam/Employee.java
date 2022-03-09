@@ -14,6 +14,7 @@ public class Employee
     public Employee(String Title, String Name, String PPS, String Phone, String EmploymentType, Integer Age)
     {
         setTitle(Title);
+        setName(Name);
     }
     private void setTitle(String Title)
     {
@@ -29,6 +30,22 @@ public class Employee
     public String getTitle()
     {
         return Title;
+    }
+
+    private void setName(String Name)
+    {
+        if(Name.length() > 2 && Name.length() < 25)
+        {
+            this.Name = Name;
+        }
+        else
+        {
+            throw new IllegalArgumentException("Invalid Name");
+        }
+    }
+    public String getName()
+    {
+        return Name;
     }
 
 }
