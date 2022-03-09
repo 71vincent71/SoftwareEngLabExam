@@ -18,6 +18,7 @@ public class Employee
         setPPS(PPS);
         setPhone(Phone);
         setEmploymentType(EmploymentType);
+        setAge(Age);
     }
     private void setTitle(String Title)
     {
@@ -101,4 +102,19 @@ public class Employee
         return EmploymentType;
     }
 
+    private void setAge(Integer Age)
+    {
+        if(Age > 16)
+        {
+            this.Age = Age;
+        }
+        else
+        {
+            throw new IllegalArgumentException("Invalid Age, Too Young");
+        }
+    }
+    public Integer getAge()
+    {
+        return Age;
+    }
 }

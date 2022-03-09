@@ -82,4 +82,19 @@ public class EmployeeTest
         Exception exceptionThrown = assertThrows(IllegalArgumentException.class, ()-> new Employee("Mr", "Vincent", "01234567", 876543210, "Time", 20));
         assertEquals(invalid,exceptionThrown.getMessage());
     }
+
+    @Test
+    void testConstructorAge()
+    {
+        myEmp = new Employee("Mr", "Vincent", "01234567", 876543210, "Full-time", 20);
+        assertEquals(20, myEmp.getAge());
+    }
+
+    @Test
+    void testConstructorInvalidAge()
+    {
+        final String invalid = "Invalid Age, Too Young";
+        Exception exceptionThrown = assertThrows(IllegalArgumentException.class, ()-> new Employee("Mr", "Vincent", "01234567", 876543210, "Full-time", 14));
+        assertEquals(invalid,exceptionThrown.getMessage());
+    }
 }
