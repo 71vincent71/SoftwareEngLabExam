@@ -15,6 +15,7 @@ public class Employee
     {
         setTitle(Title);
         setName(Name);
+        setPPS(PPS);
     }
     private void setTitle(String Title)
     {
@@ -46,6 +47,22 @@ public class Employee
     public String getName()
     {
         return Name;
+    }
+
+    private void setPPS(String PPS)
+    {
+        if(PPS.length() == 8)
+        {
+            this.PPS = PPS;
+        }
+        else
+        {
+            throw new IllegalArgumentException("Invalid PPS");
+        }
+    }
+    public String getPPS()
+    {
+        return PPS;
     }
 
 }

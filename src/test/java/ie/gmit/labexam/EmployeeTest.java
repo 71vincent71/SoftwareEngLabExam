@@ -37,4 +37,19 @@ public class EmployeeTest
         Exception exceptionThrown = assertThrows(IllegalArgumentException.class, ()-> new Employee("Mr", "Ty", "01234567", "876543210", "Full-time", 20));
         assertEquals(invalid,exceptionThrown.getMessage());
     }
+
+    @Test
+    void testConstructorPPS()
+    {
+        myEmp = new Employee("Mr", "Vincent", "01234567", "876543210", "Full-time", 20);
+        assertEquals("01234567", myEmp.getPPS());
+    }
+
+    @Test
+    void testConstructorInvalidPPS()
+    {
+        final String invalid = "Invalid PPS";
+        Exception exceptionThrown = assertThrows(IllegalArgumentException.class, ()-> new Employee("Mr", "Vincent", "0", "876543210", "Full-time", 20));
+        assertEquals(invalid,exceptionThrown.getMessage());
+    }
 }
